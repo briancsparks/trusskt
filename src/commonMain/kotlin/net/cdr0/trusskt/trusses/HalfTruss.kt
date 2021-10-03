@@ -121,6 +121,7 @@ class HalfTruss(
   // ------------------------------------------------------------------------------------------------------------------
   fun log_x(level: Int): LogItem {
     val item = LogItem(this)
+    item.level = level
     return fixupLogItem(item)
   }
 
@@ -140,7 +141,19 @@ class HalfTruss(
 
       // TODO: Implement rate limit
     }
-    return log_x(level)
+
+//    return log_x(level)
+    // TODO: Remove this version of log_x and really implement rateLimit
+    return log_x(level, myRateLimit)
+  }
+
+  // ------------------------------------------------------------------------------------------------------------------
+  // TODO: Remove this
+  fun log_x(level: Int, rateLimit: Int): LogItem {
+    val item = LogItem(this)
+    item.level = level
+    item.rateLimit = rateLimit
+    return fixupLogItem(item)
   }
 
   // ------------------------------------------------------------------------------------------------------------------

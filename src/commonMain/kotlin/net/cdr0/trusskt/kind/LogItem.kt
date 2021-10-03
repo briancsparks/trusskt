@@ -1,6 +1,7 @@
 package net.cdr0.trusskt.kind
 
 import net.cdr0.trusskt.Truss
+import net.cdr0.trusskt.utils.Constants.Companion.DEBUG
 import net.cdr0.trusskt.utils.Constants.Companion.SEND_ALL_MODE
 import net.cdr0.trusskt.utils.U
 
@@ -8,6 +9,9 @@ class LogItem(
   truss: Truss
 ): LogBase(truss) {
 
+  var level: Int = DEBUG
+
+  var rateLimit: Int = -1
 
   // ------------------------------------------------------------------------------------------------------------------
   fun <T> log(key: String, value: T): LogItem {
