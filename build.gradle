@@ -8,7 +8,7 @@ plugins {
 }
 
 group = 'net.cdr0.trusskt'
-version = '1.0.1'
+version = '1.0.2'
 
 repositories {
   mavenCentral()
@@ -32,16 +32,16 @@ kotlin {
 //    }
 //  }
 
-  // See: https://youtrack.jetbrains.com/issue/KTIJ-688
-  def hostOs = System.getProperty("os.name")
-  def isMingwX64 = hostOs.startsWith("Windows")
-  def nativeTarget
-  // KotlinNativeTargetWithTests nativeTarget
-
-  if (hostOs == "Mac OS X") nativeTarget = macosX64('native')
-  else if (hostOs == "Linux") nativeTarget = linuxX64("native")
-  else if (isMingwX64) nativeTarget = mingwX64("native")
-  else throw new GradleException("Host OS is not supported in Kotlin/Native.")
+//  // See: https://youtrack.jetbrains.com/issue/KTIJ-688
+//  // KotlinNativeTargetWithTests nativeTarget
+//  def hostOs = System.getProperty("os.name")
+//  def isMingwX64 = hostOs.startsWith("Windows")
+//  def nativeTarget
+//
+//  if (hostOs == "Mac OS X") nativeTarget = macosX64('native')
+//  else if (hostOs == "Linux") nativeTarget = linuxX64("native")
+//  else if (isMingwX64) nativeTarget = mingwX64("native")
+//  else throw new GradleException("Host OS is not supported in Kotlin/Native.")
 
 
   sourceSets {
