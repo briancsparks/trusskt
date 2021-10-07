@@ -8,7 +8,7 @@ plugins {
 }
 
 group = 'net.cdr0.trusskt'
-version = '1.0-SNAPSHOT'
+version = '1.0.1'
 
 repositories {
   mavenCentral()
@@ -23,13 +23,14 @@ kotlin {
       useJUnit()
     }
   }
-  js(LEGACY) {
-    browser {
-      commonWebpackConfig {
-        cssSupport.enabled = true
-      }
-    }
-  }
+
+//  js(LEGACY) {
+//    browser {
+//      commonWebpackConfig {
+//        cssSupport.enabled = true
+//      }
+//    }
+//  }
 
   // See: https://youtrack.jetbrains.com/issue/KTIJ-688
   def hostOs = System.getProperty("os.name")
